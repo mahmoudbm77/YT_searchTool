@@ -1,0 +1,159 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-size: 18px;
+    font-family: Georgia, serif;
+    height: 100vh;
+    box-shadow: 
+        inset 0 0 100px rgba(0,0,0,0.3) , 
+        inset 0 0 200px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #8B0000, #B22222);
+}
+
+/* The main DIV (holds every thing) */
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    flex-wrap: wrap;
+}
+/* --------------------------------------------------- */
+
+/* The main INPUT field  */
+.mainInput {
+    border-radius: 5px;
+    border: solid 1px ;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+}
+/* --------------------------------------------------- */
+
+/* The main SEARCH BUTTON  */
+.mainButton {
+    margin-left:  10px;
+    border-radius: 5px;
+    border: solid 1px ;
+    padding: 5px;
+    cursor: pointer; 
+    /* transition: all o.32s ease-in-out;
+    background-color: transparent;
+    color: black;
+    position: relative;
+    overflow: hidden;  */   
+}
+
+/* 
+.mainButton::after {
+    content: "";
+    position: absolute;
+    bottom: 0;         
+    left: 0;
+    width: 100%;
+    height: 0%;     
+    background-color: aqua;
+    z-index: 0;        
+    transition: height 0.4s ease-in-out;
+}
+
+.mainButton:hover::after {
+    height: 100%;     
+}
+
+.mainButton span {
+    position: relative;
+    z-index: 1;         
+}
+ */
+
+
+/* --------------------------------------------------- */
+
+/* the TRANSITION on the INPUT FIELD & BUTTON  */
+input, button {
+    animation: showUp 0.5s ease;
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* --------------------------------------------------- */
+
+
+
+
+/* ---RESPONSIVE EDIT--- */
+
+/* mobile & tablet common attribute (any screen less than 1024px)*/
+@media (max-width: 1024px) {
+
+    /* The main FORM inside the DIV  */
+    .mainForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+
+    /* The main INPUT field & SEARCH BUTTON  */
+    .mainInput, .mainButton {
+        margin-left: 0;
+        transform: none;
+    }
+
+    body { font-size: 16px; }
+}
+
+/* --------------------------------------------------- */
+
+/* Special mobile-only modifications (less than 767px) */
+@media (max-width: 767px) {
+
+    /* The main INPUT field */
+    .mainInput { width: 90%; max-width: 300px; }
+
+    /* The main SEARCH BUTTON  */
+    .mainButton { margin-top: 15px; width: 150px; }
+
+    body { font-size: 14px; }
+}
+
+/* --------------------------------------------------- */
+
+
+/* Tablet-specific adjustments only (between 768px & 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* The main INPUT field */
+    .mainInput { 
+        width: 90%; 
+        max-width: 500px; 
+        padding: 10px; 
+        height: 50px; 
+    }
+
+    /* The main SEARCH BUTTON  */
+    .mainButton { 
+        margin-top: 25px; 
+        width: 200px; 
+        padding: 10px; 
+    }
+
+    body { font-size: 14px; }
+}
+
+/* --------------------------------------------------- */
